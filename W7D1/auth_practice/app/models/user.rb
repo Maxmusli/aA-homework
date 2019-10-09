@@ -8,11 +8,12 @@
 #  session_token   :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  password        :integer
 #
 
 class User < ApplicationRecord
-  validates :username, presence: true
-  validates :session_token, presence: true
-  validates :password_digest, presence: {message: "password can't be blank"}
-  validates :
+  validates :username, :session_token, presence: true
+  validates :password, length: { minimum: 6 }, allow_nil: true
+  validates :password_digest, presence: {message: "password can\'t be blank"}
+  
 end
