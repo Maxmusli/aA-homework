@@ -7,7 +7,7 @@ function printCallback(arr) {
   arr.forEach(ele => console.log(ele))
 }
 
-// titleize(["Mary", "Brian", "Leo"], printCallback);
+titleize(["Mary", "Brian", "Leo"], printCallback);
 
 function Elephant(name, height, tricks) {
   this.name = name;
@@ -19,11 +19,11 @@ Elephant.prototype.trumpet = function() {
   console.log(`${this.name} the elephant goes 'phrRRRRRRRRRRR!!!!!!!'`)
 }
 
-Elephant.prototype.grow = () => {
+Elephant.prototype.grow = function() {
   this.height += 12;
 };
 
-Elephant.prototype.addTrick = (trick) => {
+Elephant.prototype.addTrick = function(trick) {
   this.tricks.push(trick);
 };
 
@@ -37,3 +37,7 @@ let a = new Elephant("hah", 12, ["eat", "jump"]);
 a.trumpet()
 
 a.play();
+
+a.grow();
+
+console.log(a.height);
